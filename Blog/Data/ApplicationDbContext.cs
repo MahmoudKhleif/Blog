@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Blog.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Blog.Data
@@ -9,5 +10,6 @@ namespace Blog.Data
             : base(options)
         {
         }
+        public DbSet<Card> Cards { get; set; }
     }
 }
