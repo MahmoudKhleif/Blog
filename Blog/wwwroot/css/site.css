@@ -17,3 +17,33 @@ body {
   margin-bottom: 60px;
 
 }
+
+.card-title{
+   font-weight:bold;
+   font-size:25px;
+}
+.fa-solid{
+ margin:5px; 
+}
+
+.del {
+    color: red;
+}
+
+.mm{
+    margin-left:150px;
+}
+
+.card {
+    max-width: 810px;
+    height: 190px;
+    margin: 40px 30px 30px 25%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.img-fluid{
+    padding-bottom: 0;
+    height: 190px;
+    width:160px;
+}
+
+

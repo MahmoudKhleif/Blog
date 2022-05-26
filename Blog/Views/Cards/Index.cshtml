@@ -4,50 +4,35 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 style="margin-top:20px; margin-bottom:15px;">Blog</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"><button type="button" class="btn btn-success" style="border-radius: 4px; ">Create <i class="fa-solid fa-circle-plus"></i></button></a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Story)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateTime)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Story)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<hr />
+
+@foreach (var item in Model) 
+{
+                <div class="card mb-3" >
+                <div class="row g-0">
+                <div class="col-md-4">
+                <img src="@item.Image" class="img-fluid rounded-start" alt="Picture">
+                </div>
+                <div class="col-md-8">
+                <div class="card-body text-justify">
+                <h6 class="card-title">@(item.Title.Length>20?$"{item.Title.Substring(0,20)}....":item.Title)@item.Id</h6>
+                <p class="card-text text-justify">@(item.Story.Length>250?$"{item.Story.Substring(0,190)}....":item.Story) <a asp-action="Details" asp-route-id="@item.Id">ReadMore</a>
+                     <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square mm"></i></a>
+                     <a asp-action="Delete" asp-route-id="@item.Id"><i  class="fa-solid fa-delete-left del"></i></a>
+                </p>
+                
+                <small class="text-muted"> <small style ="color:red; padding-top:1px; font-weight:bold; font-size:15px">Date of publication:</small>@item.DateTime</small>
+               
+                </div>
+                </div>
+                </div>
+                </div>     
+                
+ }
+ 
