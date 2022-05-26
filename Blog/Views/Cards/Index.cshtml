@@ -14,7 +14,7 @@
 
 @foreach (var item in Model) 
 {
-                <div class="card mb-3" >
+                <div class="card mb-3" style="max-width: 810px;" >
                 <div class="row g-0">
                 <div class="col-md-4">
                 <img src="@item.Image" class="img-fluid rounded-start" alt="Picture">
@@ -26,8 +26,10 @@
                      <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square mm"></i></a>
                      <a asp-action="Delete" asp-route-id="@item.Id"><i  class="fa-solid fa-delete-left del"></i></a>
                 </p>
-                
-                <small class="text-muted"> <small style ="color:red; padding-top:1px; font-weight:bold; font-size:15px">Date of publication:</small>@item.DateTime</small>
+                <div>
+                     <small class="text-muted"> <small style ="color:red; padding-top:1px; font-weight:bold; font-size:15px">Date of publication:</small>@item.DateTime</small>
+                </div>
+           
                
                 </div>
                 </div>

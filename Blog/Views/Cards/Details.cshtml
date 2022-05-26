@@ -4,40 +4,19 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1 style="margin-top:20px;">Details</h1>
+ <hr />
+<div class = "row">
+     <div class="col-sm-6" >
+         <h1 style="color:red; margin:20px,0px;">@Model.Title :</h1>
+        <p class="text-justify" style=" color:black;">@Model.Story</p>
+    </div>
+    <div class="col-sm-6" style="padding-left:80px;">
+        <img src= "@Model.Image" alt="image" style="height:400px; width:300px; margin:20px 0px;  border: 5px solid #555"/>
+    </div>
 
-<div class = "text-center">
-    <h4>Card</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Story)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Story)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateTime)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateTime)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class = "col-sm-10">
-            <img src=" @Html.DisplayFor(model => model.Image)" />
-           
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+   
+<div/>
+    <a asp-action="Edit" asp-route-id="@Model?.Id"><button type="button" class="btn btn-warning" style="border-radius: 4px; ">Edit<i class="fa-solid fa-pen-to-square"></i> </button></a> 
+    <a asp-action="Index"><button type="button" class="btn btn-primary" style="border-radius: 4px; ">Back TO lIST <i class="fa-solid fa-circle-arrow-left"></i></button></a>
 </div>
