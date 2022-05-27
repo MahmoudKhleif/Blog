@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-md-8">
                 <div class="card-body text-justify">
-                <h6 class="card-title">@(item.Title.Length>20?$"{item.Title.Substring(0,20)}....":item.Title)@item.Id</h6>
+                <h6 class="card-title">@(item.Title.Length>20?$"{item.Title.Substring(0,20)}....":item.Title)</h6>
                 <p class="card-text text-justify">@(item.Story.Length>250?$"{item.Story.Substring(0,190)}....":item.Story) <a asp-action="Details" asp-route-id="@item.Id">ReadMore</a>
                      <a asp-action="Edit" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square mm"></i></a>
                      <a asp-action="Delete" asp-route-id="@item.Id"><i  class="fa-solid fa-delete-left del"></i></a>
